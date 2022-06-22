@@ -90,7 +90,7 @@ class InterAction:
                         {
                             "name": name[:30],
                             "title": title,
-                            "notes": f"Click the image to go to the update",
+                            "notes": "Click the image to go to the update",
                             "url": showcase_url,
                             "image_url": image_url,
                         }
