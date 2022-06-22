@@ -1,5 +1,5 @@
 ### Collector for InterAction's Datasets
-[![Build Status](https://github.com/OCHA-DAP/hdx-scraper-interaction/workflows/build/badge.svg)](https://github.com/OCHA-DAP/hdx-scraper-interaction/actions?query=workflow%3Abuild) [![Coverage Status](https://coveralls.io/repos/github/OCHA-DAP/hdx-scraper-interaction/badge.svg?branch=master&ts=1)](https://coveralls.io/github/OCHA-DAP/hdx-scraper-interaction?branch=master)
+[![Build Status](https://github.com/OCHA-DAP/hdx-scraper-interaction/workflows/build/badge.svg)](https://github.com/OCHA-DAP/hdx-scraper-interaction/actions?query=workflow%3Abuild) [![Coverage Status](https://coveralls.io/repos/github/OCHA-DAP/hdx-scraper-interaction/badge.svg?branch=main&ts=1)](https://coveralls.io/github/OCHA-DAP/hdx-scraper-interaction?branch=main)
 
 This script connects to the [InterAction API](https://api.interactiondb.org/) and extracts data from 1 endpoint creating a dataset per country in HDX. It makes 1 read to InterAction and 100 read/writes (API calls) to HDX in a one hour period. It creates around 100 temporary files each a few Kb which it uploads into HDX. It is run every month.
 
