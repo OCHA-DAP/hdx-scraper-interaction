@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+  <head>
+    <meta charset="utf-8" /><script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"NRJS-d577109c48333a5e624",applicationID:"1009614215"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(9),c=t(10),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(11);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?l("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&l("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(u&&u<r.startTime)return;var i=[r],o=a({});o&&i.push(o),l("lcp",i)}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||l("cls",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&&(t["net-type"]=e.type),e.effectiveType&&(t["net-etype"]=e.effectiveType),e.rtt&&(t["net-rtt"]=e.rtt),e.downlink&&(t["net-dlink"]=e.downlink),t}function c(t){if(t instanceof y&&!w){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e<=v.now()?n.fid=v.now()-e:e>v.offset&&e<=Date.now()?(e-=v.offset,n.fid=v.now()-e):e=v.now(),w=!0,l("timing",["fi",e,n])}}function f(t){"hidden"===t&&(u=v.now(),l("pageHide",[u]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var u,s,d,p,l=t("handle"),v=t("loader"),m=t(8),g=t(3),y=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(h){}d=new PerformanceObserver(i);try{d.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}p=new PerformanceObserver(o);try{p.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var w=!1,b=["click","keydown","mousedown","pointerdown","touchstart"];b.forEach(function(t){document.addEventListener(t,c,g(!1))})}m(f)}},{}],7:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],8:[function(t,e,n){function r(t){function e(){t(c&&document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],9:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],10:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],11:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[w[n]];return p&&p.push([b,n,r,c]),c}}function o(t,e){h[t]=m(t).concat(e)}function v(t,e){var n=h[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return h[t]||[]}function g(t){return p[t]=p[t]||i(n)}function y(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var h={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:y,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(9),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!M++){var t=T.info=NREUM.info,e=m.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(x,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+T.offset],null,"api"),c("timing",["load",n]);var r=m.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===m.readyState&&o()}function o(){c("mark",["domContent",a()+T.offset],null,"api")}var a=t(5),c=t("handle"),f=t(9),u=t("ee"),s=t(7),d=t(2),p=t(3),l=d.getConfiguration("ssl")===!1?"http":"https",v=window,m=v.document,g="addEventListener",y="attachEvent",h=v.XMLHttpRequest,w=h&&h.prototype,b=!1;NREUM.o={ST:setTimeout,SI:v.setImmediate,CT:clearTimeout,XHR:h,REQ:v.Request,EV:v.Event,PR:v.Promise,MO:v.MutationObserver};var E=""+location,x={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1216.min.js"},O=h&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),T=e.exports={offset:a.getLastTimestamp(),now:a,origin:E,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(6),m[g]?(m[g]("DOMContentLoaded",o,p(!1)),v[g]("load",r,p(!1))):(m[y]("onreadystatechange",i),v[y]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var M=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function f(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(10),p="nr@original",l=Object.prototype.hasOwnProperty,v=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=f,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-20618949-1"></script>
+<script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments)};gtag("js", new Date());gtag("config", "UA-20618949-1", {"groups":"default","anonymize_ip":true,"page_path":location.pathname + location.search + location.hash,"link_attribution":true});</script>
+<link rel="canonical" href="https://www.ngoaidmap.org/members/life-relief-and-development/sports-field-rehabilitation-erbil" />
+<meta name="Generator" content="Drupal 9 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<style>div#sliding-popup, div#sliding-popup .eu-cookie-withdraw-banner, .eu-cookie-withdraw-tab {background: #0779bf} div#sliding-popup.eu-cookie-withdraw-wrapper { background: transparent; } #sliding-popup h1, #sliding-popup h2, #sliding-popup h3, #sliding-popup p, #sliding-popup label, #sliding-popup div, .eu-cookie-compliance-more-button, .eu-cookie-compliance-secondary-button, .eu-cookie-withdraw-tab { color: #ffffff;} .eu-cookie-withdraw-tab { border-color: #ffffff;}</style>
+<link rel="icon" href="/themes/ngo_aid_map/favicon.ico" type="image/vnd.microsoft.icon" />
+
+    <title>Sports Field Rehabilitation in Erbil | NGO Aid Map</title>
+
+        
+
+        
+    
+    <link rel="stylesheet" media="all" href="/sites/default/files/css/css_7q6eHsC9q4wTqDpVPfwOdLJ6JndyEq2RU_Wi1uECAnE.css" />
+<link rel="stylesheet" media="all" href="/sites/default/files/css/css_mt1bojd1nZyjWOaR61Y7JMS_q9dXm9xecMEr4pLWPOo.css" />
+<link rel="stylesheet" media="all" href="https://use.typekit.net/uwl1rmv.css" />
+<link rel="stylesheet" media="all" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+<link rel="stylesheet" media="all" href="/sites/default/files/css/css_JGu-NnVMlPhmrB8_F8oA-fcQnKNnlhMQVKCFsWnwp2U.css" />
+
+    
+  </head>
+
+  <body class="path-node page-node-type-member-update node--members/life-relief-and-development/sports-field-rehabilitation-erbil">
+        <a href="#main-content" class="visually-hidden focusable skip-link anchor-link">
+      Skip to main content
+    </a>
+
+    
+
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    <div class="l-page ">
+      <header class="l-header" role="region" aria-label="Header">
+  <div class="l-container">
+    <div class='region l-header__inner'>
+              <div class='page-controls'>
+                                      <div class='back-to-map__back-button'>
+            <div class='back-to-map__back-to-map'>
+              <a href="/explore"><span class="material-icons material-icons-outlined">arrow_back_ios_new</span> Back to map</a>
+            </div>
+          </div>
+          
+                                                      </div>
+          <div class='general-search'>
+        <div class="views-exposed-form block block-views block-views-exposed-filter-blocksearch-page-search" data-drupal-selector="views-exposed-form-search-page-search" id="block-exposedformsearchpage-search">
+  
+    
+  
+      <form action="/search" method="get" id="views-exposed-form-search-page-search" accept-charset="UTF-8">
+  <div class="form--inline clearfix">
+  <div class="js-form-item form-item js-form-type-textfield form-type-textfield js-form-item-search-keyword form-item-search-keyword">
+      <label for="edit-search-keyword">Title</label>
+        <input placeholder="Search (Ex. NGO name, tag, etc.)" data-drupal-selector="edit-search-keyword" type="text" id="edit-search-keyword" name="search-keyword" value="" size="30" maxlength="128" class="form-text" />
+
+        </div>
+<div data-drupal-selector="edit-actions" class="form-actions js-form-wrapper form-wrapper" id="edit-actions"><input data-drupal-selector="edit-submit-search" type="submit" id="edit-submit-search" value="Apply" class="button js-form-submit form-submit" />
+</div>
+
+</div>
+
+</form>
+
+  </div>
+
+      
+              <a href="/feature-your-organization" class="feature-org button__secondary">Feature Your Organization on the Map</a>
+          </div>
+    <nav role="navigation" aria-labelledby="block-ngo-aid-map-main-menu-menu" id="block-ngo-aid-map-main-menu" class="block block-menu navigation menu--main">
+            
+  <h2 class="visually-hidden" id="block-ngo-aid-map-main-menu-menu">Main navigation</h2>
+  
+
+        <button class="menu-main-toggle" aria-label="Expand or collapse the main menu navigation">
+  <div class="menu-icon">
+    <span class="material-icons material-icons-outlined">
+    menu
+    </span>
+  </div>
+</button>
+
+
+
+<div class='menu__container'>
+
+  <div class="menu__logos">
+    <img src='./themes/ngo_aid_map/img/icons/InterAction-logo.svg' />
+    <img src='./themes/ngo_aid_map/img/icons/ifad-logo-sponsored-by.png' />
+  </div>
+    
+            <ul class="main-menu">
+    
+                      <li class="menu-item">
+          <a href="/" data-drupal-link-system-path="&lt;front&gt;">Home</a>
+                  </li>
+                      <li class="menu-item">
+          <a href="/explore" data-drupal-link-system-path="node/6">Explore</a>
+                  </li>
+                      <li class="menu-item">
+          <a href="/filter" data-drupal-link-system-path="node/7">Filter</a>
+                  </li>
+                      <li class="menu-item">
+          <a href="/about" data-drupal-link-system-path="node/1">About</a>
+                  </li>
+                      <li class="menu-item">
+          <a href="/contact" data-drupal-link-system-path="node/2">Contact</a>
+                  </li>
+      
+          </ul>
+    
+  
+    <div class="views-element-container"><div class="view view-homepage-views view-id-homepage_views view-display-id-member_update_single_featured_no_picture js-view-dom-id-c63f85a5e1f122305798473a2fc17078a9a34cbe4c12f851bd5af7fceba6d656">
+  
+    
+      
+      <div class="view-content">
+          <div class="views-row">
+
+    <div class='menu-card'>
+        <div class='menu-card__header'>
+            <h4 class='menu-card__title'><span class="field field--name-title field--type-string field--label-hidden">Russia’s Invasion of Ukraine: Humanitarian Response, Insights &amp; Experts</span>
+</h4>
+            <div class='menu-card__description truncate-overflow'><p>InterAction provides tailored Media Alerts highlighting the work our Members are implementing around the world. This update includes the most recent information from InterAction Members working to support Ukraine, including Mercy Corps, Project HOPE, Americares, World Vision, FHI 360, Global Communities, Hunger Project, Heifer International, the Center for International Private Enterprise, Humanity &amp; Inclusion, the Alliance for Peacebuilding. <a href="https://www.interaction.org/blog/russias-invasion-of-ukraine-humanitarian-response-insights-experts/">Read full release including organizational contacts. </a></p></div>
+            <div class='menu-card__cta-container'>
+                                    <a href='/members/interaction/russias-invasion-ukraine-humanitarian-response-insights-experts' class='button button__tertiary  button-shadow   '>
+                                                View Update
+                    </a>
+
+            </div>
+        </div>
+        <div class='menu-card__footer'>
+            <div class='menu-card__footer-text'>
+                <a href=></a>
+            </div>
+        </div>
+
+    </div>
+
+
+</div>
+
+    </div>
+  
+          </div>
+</div>
+
+  <div class='menu-footer'>
+    <nav role="navigation" aria-labelledby="-menu" class="block block-menu navigation menu--footer">
+      
+  <h2 id="-menu"></h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="/privacy-policy" data-drupal-link-system-path="node/3">Privacy Policy</a>
+              </li>
+                <li class="menu-item">
+        <a href="/terms-conditions" data-drupal-link-system-path="node/4">Terms &amp; Conditions</a>
+              </li>
+                <li class="menu-item">
+        <a href="/copyright" data-drupal-link-system-path="node/5">Copyrighted by InterAction 2021</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+
+    <div class='menu-footer__social-links'>
+      <a href='https://www.facebook.com/InterActionOrg/'>
+        <img src='./themes/ngo_aid_map/img/icons/facebook_icon.svg'></img>
+      </a>
+      <a href='https://twitter.com/interactionorg'>
+        <img src='./themes/ngo_aid_map/img/icons/twitter_logo_icon.svg'></img>
+      </a>
+      <a href='https://www.linkedin.com/company/interaction/'>
+        <img src='./themes/ngo_aid_map/img/icons/linkedin_social_icon.svg'></img>
+      </a>
+    </div>
+  </div>
+
+
+</div>
+
+
+
+
+  </nav>
+
+    
+  
+    </div>
+  </div>
+</header>
+  
+  
+      <main class="l-content" role="region" aria-label="Main content area">
+  
+      <div class="region l-content__inner">
+    <div data-drupal-messages-fallback class="hidden"></div>
+<div id="block-ngo-aid-map-content" class="block--main block block-system block-system-main-block">
+  
+    
+      <article data-history-node-id="627" role="article" about="/members/life-relief-and-development/sports-field-rehabilitation-erbil" class="node node--member-update node--member-update--full node--type-member-update node--promoted node--view-mode-full">
+
+  <div class="node__content">
+    <div class='member-profile-page'>
+      <div class='member-profile__featured-button'>
+        <a href="/feature-your-organization" class="feature-org button__secondary">Feature Your Organization on the Map</a>
+      </div>
+      <div class='member-profile-page__data'>
+        <div class="views-element-container"><div class="view view-member-profile view-id-member_profile view-display-id-block_1 js-view-dom-id-686d2654d3e408a1c592c6ed9025d0ddc00e67beb5b7bfae0d4b85f5227171d8">
+  
+    
+      
+      <div class="view-content">
+          <div class="views-row"><div class='member-profile-page__breadcrumbs'>
+	<div class='member-profile-page__breadcrumbs-content'><div id="block-ngo-aid-map-breadcrumbs" class="block block-system block-system-breadcrumb-block">
+  
+    
+  
+        <nav class="breadcrumb" role="navigation" aria-labelledby="system-breadcrumb">
+    <h2 id="system-breadcrumb" class="visually-hidden">Breadcrumb</h2>
+    <ol>
+          <li>
+                  <a href="/member-profiles">Members</a>
+              </li>
+          <li>
+                  <a href="/members/life-relief-and-development">Life for Relief and Development</a>
+              </li>
+          <li>
+                  Sports Field Rehabilitation in Erbil
+              </li>
+        </ol>
+  </nav>
+
+  </div>
+
+	</div>
+</div>
+<div class='member-profile-page__title'>
+	<h1>Life for Relief and Development</h1>
+</div>
+<div class='member-profile-page__link'>
+		    <a href='https://www.lifeusa.org/' class='button button__text   '>
+                            View Website
+                                            <span class="material-icons material-icons-outlined text-icon  icon__alt  ">
+                    north_east
+                </span>
+                        </a>
+
+</div>
+<div class='member-profile-page__image'>
+	<article class="media media--type-image media--view-mode-default">
+  
+      
+  <div class="field field--name-field-media-image field--type-image field--label-visually_hidden">
+    <div class="field__label visually-hidden">Image</div>
+              <div class="field__item">  <img src="/sites/default/files/styles/large/public/2021-10/Lemuel%20Ragasa_mother%20daughter.jpeg?itok=05PUzgn6" width="480" height="319" alt="Life for Relief and Development" loading="lazy" typeof="foaf:Image" class="image-style-large" />
+
+
+</div>
+          </div>
+
+            <div class="field field--name-field-caption field--type-string field--label-hidden field__item">Credit: Lemuel Ragasa</div>
+      
+  </article>
+
+</div>
+<div class='member-profile-page__countries-container'>
+	<div class='member-profile-page__countries-container-title'>
+		<h2>Member Updates</h2>
+		<p>By country</p>
+	</div>
+	<div class='member-profile-page__countries-container-content' data-node="461">
+		<article data-history-node-id="113" role="article" about="/countries/iraq" class="node node--country-profile node--country-profile--map-image-only node--type-country-profile node--promoted node--view-mode-map-image-only">
+
+  <div class='country-profile-page-cid'>
+      <div class='country-profile-page__container'>
+      <a href="/filter?f%5B0%5D=countries%3A113">
+        <div class='country-profile-page-cid__content'>
+
+            <div class='country-profile-page__country-name'>
+              <h5>Iraq</h5>
+            </div>
+            <div class='country-profile-page-cid__image' style='-webkit-mask: url(/sites/default/files/country-logo/iq.svg) no-repeat center;mask: url(/sites/default/files/country-logo/iq.svg) no-repeat center;'>
+              <?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 18.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M61.1,2.9L61.1,2.9l0.3,1l0.8,3.3l0.5,0.4L63.3,8l0.4,0.5L63.8,9l0,0.8l0,0.9
+	l0.2,0.7l0.3,0.5l0.3,0.3l0.4,0l0.5,0.1l0.3,0.5c0.4,1.4,0.8,2.8,1.2,4.2l0.5,0.2l0.8-0.1l0.8,0.4l0.8,0.6l0.8,1.1l0.5,0.2l1.7-0.2
+	l2.3,0.2l1.1,0.6l-0.1,0.4l-0.8,0.4l-1.4,0.5l-0.4,0.8l-0.2,1l0,0.6l0.4,0.6l1,1.3l0.1,0.5l0.2,0.6l0.2,0.4L74.9,28l-0.9,0.6
+	l-1.2,0.6L70.3,32l-0.2,0.6l0,1.7l-0.2,0.5l-0.8,0l-0.6-0.1l0,0.6L68.1,36l-0.2,0.7l0.9,1.6l0.2,0.8l-0.1,0.8
+	c-0.5,0.7-0.9,1.5-1.3,2.2l0.1,0.2l0.6,0.4c0.9,1.3,1.8,2.6,2.7,3.9l0.9-0.3l0.3,0l0.3,0.2l0.2,0.3v0.4l-0.2,0.6l1.1,0.3
+	c0.6,1,1.1,1.9,1.7,2.9l0,0.7l-0.6,1.1l0,0.7l0.1,0.6l0.2,0.2l1.9,0.1l0.8,0.3l1.9,1.1c1.8,1.5,3.7,2.9,5.5,4.4l1.6-0.1l0.4,0.2
+	l0.4,0.4c0.5,1.1,1,2.1,1.4,3.2l0.8,0.7c0.8,1.2,1.6,2.3,2.4,3.5c-0.5,1.5-1,3.1-1.5,4.6c0,1.6,0,3.1,0,4.7c1.1,0,2.2,0.1,3.3,0.1
+	c0,2,0,4.1,0,6.1l0.5,0.1l0.8,0.5l0.4,0.7l0.4,0.4l0.5,0.1l0.5,0.4l0.5,0.6l0.2,0.5l-0.1,0.3l0.1,0.6l0.4,0.8l0.4,0.4l0.7,0.5
+	l-0.9,0.3l-1-0.2l-2.1-1l-0.7,0L93.5,89l0,0.3l-2.3-1.1l-0.8-0.2l-0.3,0l-1.3,0l-1.8,0.2l-1.1,0.4l-0.8,0.5l-0.3,0.5
+	c-0.7,1.6-1.4,3.3-2.1,4.9l-1.4,2.2l-0.8,1l-1.6,1.9l-1.8,0.4c-5.5-0.5-11-1-16.5-1.5l-0.3-0.1c-8.9-7.2-17.7-14.3-26.3-21.8
+	c-5.4-3.2-10.7-6.4-16-9.6l-1.1-0.5c-4.1-0.8-8.2-1.5-12.3-2.2l1.5-1.4l-0.5-1.3l-1.1,0.2l-1,0.3l-0.6-2l0.8-0.2
+	c-1-3.5-1.9-7-2.9-10.5c6.4-3.9,12.9-7.7,19.3-11.6l2.5-0.7l0.5-0.5c0.7-1.4,1.4-2.8,2.1-4.2l0-0.4c0-2,0-4,0.2-5.9l0.3-1.7l0.6-1.5
+	l0.5-1.1l0.1-1l-0.1-1.1c-0.4-1.1-0.7-2.2-1.1-3.3l0.1-1.6l0.1-0.9l0.3-1.4l0.6-1l0.6-0.6c1.2-0.3,2.5-0.7,3.7-1
+	c2-1.8,3.9-3.8,5.6-5.8l0.1-0.4l0-0.2l1-0.3l1.8-1.5l1.1-1.4L41.1,0l1,0.5l0.7,0.1l1.6-0.5l0.9,0.3L46,0.7l0.4,0l2.1,0.9l0.5,0.1
+	l1.1,0.1l1.6,0l1-0.6l0.7-0.6l0.5,0l0.5,0.1L55,1.1l0.4,0.4l0.2,0.6L55.4,4l0.2,0.5l0.3,0.4L56.3,5l0.4-0.4c0.5-0.5,1.1-0.9,1.7-1.3
+	l0.7-0.6l0.4-0.2l0.6,0l0.6,0.1L61.1,2.9z"/>
+</svg>
+
+            </div>
+            </div>
+          </a>
+
+      </div>
+  </div>
+</article>
+ <article data-history-node-id="143" role="article" about="/countries/mali" class="node node--country-profile node--country-profile--map-image-only node--type-country-profile node--promoted node--view-mode-map-image-only">
+
+  <div class='country-profile-page-cid'>
+      <div class='country-profile-page__container'>
+      <a href="/filter?f%5B0%5D=countries%3A143">
+        <div class='country-profile-page-cid__content'>
+
+            <div class='country-profile-page__country-name'>
+              <h5>Mali</h5>
+            </div>
+            <div class='country-profile-page-cid__image' style='-webkit-mask: url(/sites/default/files/country-logo/ml.svg) no-repeat center;mask: url(/sites/default/files/country-logo/ml.svg) no-repeat center;'>
+              <?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 18.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M100,40.9c0,4.6,0,9.1,0,13.7l-0.2,0.2c-0.1,0.8-0.1,1.6-0.1,2.4l-0.4,1.4l-0.6,1
+	l-0.2,1l-0.2,0.6L98,61.6L98,61.9l-0.1,0.5l-0.2,0.3L97.5,63l-0.6,0.2l-1.1,1l-0.1,0.8c-0.9-0.2-1.8-0.3-2.7-0.4l-0.2,0l-0.1,0.1
+	L92.5,65c-3.4,0.1-6.9,0.2-10.3,0.4c-0.7,0.6-1.4,1.2-2.1,1.8l-0.1,0l-1.4,0.2L77,67.3l-0.9,0l-0.3,0.1l-0.1,0.3
+	c-0.9-0.3-1.8-0.6-2.7-0.9l-1,0.3L71.7,67l-0.1-0.2l-0.5-0.1l-0.8,0.1l-0.6,0.1l-0.9,0.7l-0.7,0.6L68,68.3l-0.9,0.4l-1.7,0.8l-1,0.6
+	l-0.2,0.1l-0.4,0.1l-0.7,0l-0.6,0.2l-0.5,1.6l-0.3,0.2l-2.1-0.7l-0.4,0.1L58.7,72l-1.2,1L57,73.7l-0.3,1l0,0.3l0,0.4l-0.2,0.2
+	l-0.3,0.1l-0.3,0l-1-0.2l-0.3,0.1l-0.1,0.5l0,1.1l-0.2,0.7l-0.6,0.2l-0.4,0.3L53,78.5l-0.3-0.1L51,77.3l-0.6-0.2l-0.6,0.1l-0.6,0.5
+	L49,78.1l-0.4,0.4l-0.4,0.5l0.1,0.4l0.3,0.5l0.2,0.6l0,0.5l-1.5,0.8l0.1,0.3l0.2,0.3c0,0.5,0,1,0,1.5l-0.3,0.3l-0.4,0.3l-0.2,0.4
+	l-0.2,0.2l-0.4,0.3l-0.6,0.3c-0.6,0.2-1.2,0.3-1.9,0.4l-0.3,0.2l-0.4,0.3l-0.4,0.4l-0.1,0.4l0.1,0.5l0.1,0.4l0.2,0.3l0.1,0.3
+	l-0.1,0.9l-0.3,1L42,91.2l-0.5,0.3l-0.4,0.3l0.1,0.7l0.1,1l-0.1,0.8l0,0.5c-0.1,0.3-0.2,0.6-0.3,0.9l-0.2-0.1l-0.8,0L39,95.8
+	L38.7,96l-0.1,0.3l-0.2,0.2l-0.3,0.2L37.8,97l-0.5,0l-0.5-0.2l-0.3-0.2l0-0.1l0.2-0.3l0.1-0.3l0-0.2l-0.2-0.5l-0.1-0.5l0.1-0.2
+	l-0.1-0.7l-0.1,0l-0.6,0.2l-0.2,0l-0.1,0.1l0,0.1l0.2,0.5l-0.1,0.1l-0.4,0l-0.5-0.2l-0.5-0.4l-0.1,0.1l-0.1,0.3l0,0.4l0.1,0.7
+	l-0.1,0.3l-0.4,0L33,96l-0.4,0.1l-0.3,0l-0.2,0.3L32,96.7l0.2,0.3l0,0.1L32,97.2l-0.2,0.1l-0.1,0L31.3,97l-0.5-0.1l-1.1-0.2
+	l-0.1-0.5l-0.2,0l-0.3-0.3L29,95.5l-0.2,0l-0.2,0.1l-0.6,0l-0.5,0.5L27,96.8l-0.4,0.3l-0.5,0.1l-0.2,0l0.1-0.4L26,96.5l-0.1-0.3
+	l-1.4-0.7l-0.2-0.3l-0.2-0.8L24,93.6l0-0.5l0.1-0.4l0-0.3l-0.1-0.3l-0.4-0.2L23,91.7l-0.5,0.3l-0.3,0.1l-0.2,0L21.9,92l0-0.2
+	l0.6-0.9l0.3-0.4l0.3-0.3l0.2-0.1l0.1-0.2l0-0.2l-0.1-0.1l-0.4-0.2l-0.6-0.4l-0.3,0l-0.3-0.2l-0.3-0.6l-0.1-0.1L21.2,88l-0.3-0.2
+	c0-0.5,0-1,0-1.5l-0.6-1.2l-0.2-0.7l-0.3-0.7l-0.3-0.3l-0.5-0.3l-0.6-0.2l-0.5,0l-0.4,0.1L17.5,83l0,0.1l0.3,0.5l0.1,0.3l-0.1,0.3
+	l-0.1,0.2l-0.3,0l-0.5,0.1l-0.6,0.3L15.9,85l-0.3,0.6l-0.2,0.1l-0.4-0.1c-0.9-0.4-1.8-0.7-2.7-1.1c-0.2,0.1-0.4,0.1-0.6,0.2L11,85
+	l-0.7,0.9l-0.2,0.3l-0.1,0.1l-0.2,0.2l-0.2,0l-0.2-0.1l0-0.1c-0.3-0.5-0.5-0.9-0.8-1.4l-0.3-0.3l-0.4,0l-0.4,0.2L7,85.3l-0.5,0.4
+	l-0.3,0.1l-0.3-0.1c-0.4-0.3-0.8-0.6-1.1-0.9l-0.1-0.2l0.2-0.3L5,83.9l0.2-0.4l0.2-0.2l0-0.5L5,82.6l0-0.2l0-0.4l0.2-0.9l0-0.4
+	L5.4,80l-0.3-0.3l-0.1-0.2l-0.3-0.4l-0.3-0.5l-0.1-0.4l-0.1-0.3l-0.3-0.5l-0.2-0.1l-0.5-0.1l-0.1,0.2l-0.2,0.2l-0.2,0.1l-0.3-0.3
+	l-0.1-0.3l0-0.2L2,76.5l-0.6-0.8l0.1-0.6l0.4-0.3l0.1-0.3l0-0.3l-0.2-0.3l-0.2-0.3L1.6,73l0-0.8l-0.3-0.4L1,71.4l-0.4-0.3l-0.3-0.5
+	c0.1-0.4,0.1-0.8,0.3-1.2l-0.6-1l1.1,0.4l0.1-0.1l0.4-0.2l0.5-0.5l0.4-0.7l0.2-0.8l0.1-0.7L2.9,65l0.2-0.5L3.7,64
+	c0.3-0.3,0.7-0.5,1-0.8L5,63.3c0.9,0.9,1.8,1.7,2.7,2.5l0.4,0.5l0.3,0l0.5-0.8l0.5-0.7l0.2-0.2c0.4-0.1,0.8-0.1,1.2-0.1l0.5,0
+	l0.9,0.1l0.4,0.1l0.4,0.1l1.1,0.1c1-0.2,2-0.3,3-0.5l0-0.3l0-0.4l0.1-0.3l0.2-0.3l0.2-0.1l0.1,1l0.3,0.1c7.6,0.2,15.3,0,22.9,0
+	c0.3-1.7,0.6-3.3,0.9-5c-0.5-0.6-1.1-1.2-1.6-1.8c-2-18.2-3.9-36.4-5.8-54.6c3.6,0,7.2,0,10.7,0c12.2,8.3,24,17.2,36.1,25.6l0.1,0.3
+	l0.1,0.5l-0.1,0.6l0,0.5l0.3,0.3l0.5,0.3l1.9,1l0.2,0.2l0.1,0.4l0.2,0.5l0.4,0.3l0.5,0.2l0.6,0.2l1.8,0.2l0.4,0.2l0.8,0.9l0.4,0.2
+	c0.8,0.2,1.6,0.4,2.4,0.5l0.8,0.3l0.8,0.4l0.4,0.4c0,0.5,0,1,0,1.5l0.2,0.6l0.2,0.4l0,0.2l-0.2,0.2l-0.2,0.2l-0.1,0.3l-0.2,0.4
+	l-0.2,0.4l0.1,0.3l0.3,0.2l0.5,0.4l0.4,0.2l0.2,0l0.3,0C96.6,41.6,98.3,41.3,100,40.9z"/>
+</svg>
+
+            </div>
+            </div>
+          </a>
+
+      </div>
+  </div>
+</article>
+ <article data-history-node-id="222" role="article" about="/countries/syria" class="node node--country-profile node--country-profile--map-image-only node--type-country-profile node--promoted node--view-mode-map-image-only">
+
+  <div class='country-profile-page-cid'>
+      <div class='country-profile-page__container'>
+      <a href="/filter?f%5B0%5D=countries%3A222">
+        <div class='country-profile-page-cid__content'>
+
+            <div class='country-profile-page__country-name'>
+              <h5>Syria</h5>
+            </div>
+            <div class='country-profile-page-cid__image' style='-webkit-mask: url(/sites/default/files/country-logo/sy_0.svg) no-repeat center;mask: url(/sites/default/files/country-logo/sy_0.svg) no-repeat center;'>
+              <?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 26.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 595.3 548.3" style="enable-background:new 0 0 595.3 548.3;" xml:space="preserve">
+<path d="M595,21.5l-4.2-13.7l-4.2-5.4l-1.8-0.6L580.6,0l-3,1.2l-9.5,9.5l-15.5,5.4c-11.3,3-22,5.4-33.3,7.7l-16.1,1.8h-6.5
+	l-14.9-1.8l-13.1-2.4h-13.1l-10.1,1.2l-23.2,10.1L383,53.5l-29.8,10.1c-9.5,2.4-19.6,4.8-29.8,6.5h-22.6l-18.5-1.8H270l-6-3
+	L253.9,57L242,48.7l-5.4-1.8l-7.1-1.8l-10.1-1.2c-11.3,5.4-22.6,10.7-33.9,15.5l-8.9,2.4l-17.9,7.1l-7.7,4.2
+	c-7.7,0-14.9-0.6-22.6-1.2l-10.7,0.6l-7.1-5.4l-4.2-6.5L91.5,57l-10.7-1.2l-3,3l-3,8.3C73,76,71.2,85.6,69.4,94.5l9.5,22l-0.6,3.6
+	l-6.5,1.2l-7.7,0.6l-4.2,1.2l-4.2,3.6l-2.4,18.5l-9.5,3.6l-4.2,4.2l-4.2,11.3H33l-14.3-8.9l-6.5-0.6l-4.8,7.7l-7.1,31l12.5,16.7
+	L14,218v5.4l2.4,8.9l-4.8,17.9v12.5l0.6,10.7l7.1,24.4c8.9,0,17.3,0,26.2-0.6l3-4.8l7.7,2.4l4.2,4.8l-4.2,5.4l-5.4,6l0.6,1.8
+	l4.2,0.6l7.1,3l4.2,3.6l7.1,23.2l-4.8,9.5l-7.1,8.3h-2.4l-6,4.2l-5.4,6l-1.8,3.6l0.6,3.6l7.1,4.2v1.8l-1.8,1.2l-6-1.2
+	c-4.2-0.6-7.7-0.6-11.9-0.6l-4.8,1.2l-6.5,5.4l-3,3.6l-1.8,2.4l-2.4,7.1l2.4,4.8l5.4,2.4l0.6,1.2l-1.2,2.4l-4.8,3l-3.6,3.6L14,424
+	l-4.2,3.6c-0.6,3.6-1.8,7.1-3,10.7v5.4l1.8,3l3,6l1.8,6l-3.6,5.4v6.5l1.2,4.2l3,5.4c-3,6-6.5,11.9-10.1,17.9l-1.2,5.4l9.5,2.4
+	l5.4,4.8l9.5,14.3l14.3,4.2l6,4.2l7.7,7.7l9.5,3l31,4.2c115.5-75,232.2-146.4,348.8-217.9l22-6l4.8-4.8c6.5-12.5,12.5-25,19-37.5
+	l0.6-4.2c0-17.9,0-35.7,1.8-53l3-15.5l4.8-13.7l4.8-10.1l0.6-9.5l-0.6-9.5c-3-9.5-6.5-19.6-9.5-29.2l0.6-14.3l1.2-7.7l3-12.5
+	l5.4-8.9l5.4-5.4c11.3-3,22.6-6,33.3-9.5c17.9-16.7,34.5-33.9,50.6-52.4v-5.2H595z"/>
+</svg>
+
+            </div>
+            </div>
+          </a>
+
+      </div>
+  </div>
+</article>
+ <article data-history-node-id="176" role="article" about="/countries/palestinian-territory" class="node node--country-profile node--country-profile--map-image-only node--type-country-profile node--promoted node--view-mode-map-image-only">
+
+  <div class='country-profile-page-cid'>
+      <div class='country-profile-page__container'>
+      <a href="/filter?f%5B0%5D=countries%3A176">
+        <div class='country-profile-page-cid__content'>
+
+            <div class='country-profile-page__country-name'>
+              <h5>Palestinian Territory</h5>
+            </div>
+            <div class='country-profile-page-cid__image' style='-webkit-mask: url(/sites/default/files/country-logo/ps.svg) no-repeat center;mask: url(/sites/default/files/country-logo/ps.svg) no-repeat center;'>
+              <?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 18.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Palestine" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
+<path d="M24.1,72.2l-0.1,0.4l-2.3,3.3l-4.8,5l-1.3,2.3l-3,2.2l-1.3,2.3l-2.9,2.6l-0.9,1.2L6,92.3l1.5,2.8c0.5,1.6,1,3.2,1.5,4.8l0,0
+	l1-0.9l3.3-2.4l2.2-2.4l0.2-1.3l-0.5-2.6l0-1.3l1.4-2.6l7.2-6.9l1-0.7h0l2.1-1.9l0.1-1.6L26,73.8L24.1,72.2z M93.1,23l0.1-0.4
+	l0.2-0.3l0.2-0.2L94,22l-0.5-0.9l-0.2-1.4l0-1.4l0.3-0.9l-0.6-1.1l0.1-2.3l-0.3-0.7v-0.5h0.5v0.5h0.4l-0.1-0.7l-0.2-0.6
+	c-2.2-0.6-4.5-1.1-6.7-1.7L85,10.2l-1.7-0.5L83,7.8l0-2.3l-0.6-1.8l-1.9-1.2l-1.9-0.2l-4,0.2L73.4,2l-1.8-1.5l-1-0.5l-1.1,0.1
+	l-0.9,0.7L67,2.6l-2,1.3l-1.9,0.9L61.4,6l-1.3,2.2l-1,5.2L58.7,15l-0.2,0.2l-0.9,0.3l-0.2,0.2l-0.3,1L56.8,19l-0.2,1l0.8,0.3
+	l0.4,0.6l0.1,0.8l-0.2,0.9l-0.5,0.9l-2.5,2.3l-0.9,1.1l-0.1,0.7l1,2.3l0.3,1.3l0.8,7.1l0,1.4c-0.1,0.6-0.1,1.1-0.1,1.7l0,0l0,0l0,0
+	l0,0.3l0,0.3l0,0.3c-0.1,0.8-0.2,1.7-0.3,2.5l1.3,2.9l0.8,2.5l-1.8,1l-1.7,0.6l-0.5,1.3l0.6,1.3l2.1,0.4l1,0l0.5-0.1l0.6-0.4
+	l1.1-1.2l0.5-0.3l0.9,0.2l3.3,1.6l4.5,1.1l1.1,0.7l0.5,0.9l0.1,1.2l-0.1,1.6l-0.2,0.4L70,60.6l-0.3-0.2l-0.4-0.3l-4,0.8l-1.2,0.6
+	L63,62.5l-2.2,2.3l-5.2,3.9l-1.2,1.4l-1.2,2.2l-0.3,2l0,2.1l-0.4,2.4l-2.9,4.8l-0.9,2.5l0.7,2.5l1.4,1.1l1.7,0.3l1.8-0.3l1.6-0.6
+	l3.8-0.5l8,0.1l3.7-1.4l7-5.8l3.7-2.1l4.4-0.4l0,0l0,0l0-0.1l0-0.1l0.4-5.6l1-5.4l3-7l2-2.3l-1.3-4V54l0.7-0.9l-1.6-6l0.2-0.6
+	l0.4-0.2l0.4-0.1l0.3-0.4l0-0.6l-0.4-0.8l-0.1-0.6l0-1l-0.1-0.8l-0.7-1.8l-0.1-3.5l0.4-1.3l1.1-0.9l-0.7-0.9l0-0.9l1.1-1.8l-0.3-0.5
+	v-0.4l0.3-0.3l0.5-0.3v-0.6l-0.3-0.9L94,23H93.1z"/>
+</svg>
+
+            </div>
+            </div>
+          </a>
+
+      </div>
+  </div>
+</article>
+ <article data-history-node-id="205" role="article" about="/countries/sierra-leone" class="node node--country-profile node--country-profile--map-image-only node--type-country-profile node--promoted node--view-mode-map-image-only">
+
+  <div class='country-profile-page-cid'>
+      <div class='country-profile-page__container'>
+      <a href="/filter?f%5B0%5D=countries%3A205">
+        <div class='country-profile-page-cid__content'>
+
+            <div class='country-profile-page__country-name'>
+              <h5>Sierra Leone</h5>
+            </div>
+            <div class='country-profile-page-cid__image' style='-webkit-mask: url(/sites/default/files/country-logo/sl.svg) no-repeat center;mask: url(/sites/default/files/country-logo/sl.svg) no-repeat center;'>
+              <?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 18.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
+<path d="M25.8,77.4l-2.3-1l-7.7,0.5l-3.1,1.7l11,3.1l2.1,2.1l0.5-0.8l0.8-3.2l-0.4-1.5L25.8,77.4z M95.7,48.7l-1.1,0.5L91.3,53
+	l-2,1.5l-1.5-0.1L86.3,54l-1.1,0.3l-0.8-0.4l0.3-0.9l0.8-1.2l1.6-4.2l4-4.2l0.1-0.9L89.6,40l-1.7-3.4l0-3.6l-0.3-2.6L84,29.7
+	l-0.6-0.4l-0.1-0.9l0.9-2.3l1.1-2.2l0.2-0.9l-0.2-0.8l-2.2-2.3l-3.4-4.3c-1.9-2.9-3.9-5.8-5.8-8.8L71.5,5l-2.1-2.7l-0.8-1.7L66.5,0
+	c-6.8,0-13.6,0.1-20.4,0.1l-0.4,2.3l-7,1.5l-4.3-1.8l-4.8,1l-2.4,1.2l-0.7,2.4l-1.1,2.7l-1,1.1l-0.4,1.2l-0.6,1.1l-0.9,1.3l-1,2.5
+	L19,20.2l-2.4,2.3l-4.1,1.3l-1.3,3.8L10.3,29l-1.6,1.1L7,30.8l-1.6-0.4l-1.8-0.3l-1.9,0.7l0.7,2l3.8,2.9l3,0.5L8.9,37l-4.3,0.4
+	L4,39.9l-0.1,2.3L5.4,46l1.9-0.4l1.1-1.2l4.3,0.3l1.6-1.3l0.3,0.9L14,45.9l-2.6,1.8L8.5,51l-2.3-0.6L4.7,49l-1.9-0.1l-0.4,1.9l2.3,3
+	l1.7,3.9l4.1,0.4l2,1.8l1,2.9l1.4,6.4l1,1.2l2.2,0.9l2.7,2.4l4.1,0.5l1.9-1.7l1,0l-1,2.8l2.5,3.9l-1.5,3.3l-0.2,1.8
+	c6,1.9,11.9,4.3,17.8,6.5l6.3,3.1l6,4.6L59,100l1.7-1.4l2.5-4.6l3.5-4.4l3.3-2.6l2.6-2.7l2.7-2.1l3.9-2.4l6-6.4l1.4-0.7
+	c0.7-3.4,1.6-6.7,2.5-10.1l1.7-1.8l4.1-1l1-1l1.4-4l0.9-4.6l0.1-1L95.7,48.7z"/>
+</svg>
+
+            </div>
+            </div>
+          </a>
+
+      </div>
+  </div>
+</article>
+
+    	</div>
+</div>
+
+
+
+</div>
+
+    </div>
+  
+          </div>
+</div>
+
+      </div>
+      <div class='member-profile-page__member-update-view'>
+        <div class="views-element-container"><div class="view view-member-update view-id-member_update view-display-id-block_3 js-view-dom-id-5a7e147cd1665c2c8765d977d9ce32007b78cd00ba06324acc3c3d7b75d4a175">
+  
+    
+      
+      <div class="view-content">
+          <div class="views-row">
+    <p class='member-update-view__more-eyebrow'>Member Update</p><div class='member-update-view'>
+  <div class='member-update-view__container'>
+    <div class='member-update-view__eyebrow'>
+      <div class='member-update-view__more-updates'>
+        <p>More Updates <span class="material-icons material-icons-outlined">expand_more</span></p>
+      </div>
+      <div class='member-update-view__more-listing'>
+        <div class="views-element-container"><div class="view view-member-update view-id-member_update view-display-id-block_2 js-view-dom-id-077764aba266ce9314e395f7625ceed0616fb9ae080a51f45633c0654187d35d">
+  
+    
+      
+      <div class="view-content">
+      <p class='member-update-view__more-eyebrow'>Member Update</p>
+    <div class="views-row"><div class='member-update-view__more'>
+  <div class='member-update-view__more-container'>
+    <div class='member-update-view-more__content'>
+      <div class='member-update-view__more-title'>
+        <h2><a href="/members/life-relief-and-development/food-basket-distribution-jordan" hreflang="en">Food Basket Distribution in Jordan</a> <span><time datetime="2022-04-27T12:00:00Z" class="datetime">April 27, 2022</time>
+</span></h2>
+      </div>
+      <div class='member-update-view__more-summary'>
+        <p> </p>
+
+<p>In recent months, the significant rise in food prices has hindered the ability of Syrian refugees living in refugee camps in Jordan to source and obtain affordable food. With many at risk of going hungry, Life for Relief and Development stepped in to distribute food baskets throughout the Zarqa, Hittin, Irbid, and Mafraq refugee camps in Jordan. A total of 773 families received the baskets containing 2 kilos of rice, 10 kilos of sugar, 2 kilos of lentils, 1/2 kilo of tea, and 3 liters of frying oil.</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+</div>
+    <div class="views-row"><div class='member-update-view__more'>
+  <div class='member-update-view__more-container'>
+    <div class='member-update-view-more__content'>
+      <div class='member-update-view__more-title'>
+        <h2><a href="/members/life-relief-and-development/medical-supplies-delivered-mali" hreflang="en">Medical Supplies Delivered in Mali </a> <span><time datetime="2022-03-28T12:00:00Z" class="datetime">March 28, 2022</time>
+</span></h2>
+      </div>
+      <div class='member-update-view__more-summary'>
+        <p>For years, healthcare institutions in the Bamako area have lacked adequate medical supplies, leaving doctors and nurses in the area unable to treat many of their patients. One of these institutions is the Center de Sante de Reference de la Commune II, located in Bamako. To ensure that medical professionals are able to treat their community, LIFE for Relief and Development delivered medical supplies to the center and the dispensaries underneath it.</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+</div>
+    <div class="views-row"><div class='member-update-view__more'>
+  <div class='member-update-view__more-container'>
+    <div class='member-update-view-more__content'>
+      <div class='member-update-view__more-title'>
+        <h2><a href="/members/life-relief-and-development/community-centre-built-senegal" hreflang="en">Community Centre Built in Senegal</a> <span><time datetime="2022-03-25T12:00:00Z" class="datetime">March 25, 2022</time>
+</span></h2>
+      </div>
+      <div class='member-update-view__more-summary'>
+        <p>On March 25, 2022, the Ibrahim Khalilullah Community Center, sponsored by LIFE, opened in Malicounda Bambara, in Mbour. The center's floor plan was expanded by 96 square meters with restrooms and wudu (prayer) areas built to accommodate more members of the community. The center will serve a community of more than 1,500 people.</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+</div>
+    <div class="views-row"><div class='member-update-view__more'>
+  <div class='member-update-view__more-container'>
+    <div class='member-update-view-more__content'>
+      <div class='member-update-view__more-title'>
+        <h2><a href="/members/life-relief-and-development/north-syria-winterization-project" hreflang="en">North Syria Winterization Project</a> <span><time datetime="2022-03-15T12:00:00Z" class="datetime">March 15, 2022</time>
+</span></h2>
+      </div>
+      <div class='member-update-view__more-summary'>
+        <p>In January 2022, a snowstorm in northern Syria caused significant damage to the <span><span>Sheikh Bahr Alkada and Kelly Madajin Mustafa Albish refugee camps in Idlib</span></span>, putting refugees at risk due to the low temperatures and exposure to snow and ice. LIFE for Relief and Development organized a winterization project to provide refugees with heavy blankets. One blanket was given to each family, and those with more than five members per family received two blankets. In all, 19,642 individuals were reached by the winterization project.</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+</div>
+    <div class="views-row"><div class='member-update-view__more'>
+  <div class='member-update-view__more-container'>
+    <div class='member-update-view-more__content'>
+      <div class='member-update-view__more-title'>
+        <h2><a href="/members/life-relief-and-development/sports-field-rehabilitation-erbil" hreflang="en">Sports Field Rehabilitation in Erbil</a> <span><time datetime="2022-02-25T12:00:00Z" class="datetime">February 25, 2022</time>
+</span></h2>
+      </div>
+      <div class='member-update-view__more-summary'>
+        <p><span><span>LIFE for Relief and Development <span>revitalized</span> sports fields in Akito and Shalama schools in the Ainkawa District in Erbil. The rehabilitation project started with a clean-up of dirt and debris from the fields. Next, basketball and volleyball bases were installed, along with the nets. Fences and gates to the sports courts were also painted to complete the transformation. The schools were provided with sports equipment and sportswear, so students have everything they need to enjoy the new facilities. About 1,000 students will benefit from this rehabilitation project. <a href="https://www.lifeusa.org/post/sports-field-rehabilitation-in-iraq">More information</a>.</span></span></p>
+
+<p> </p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+</div>
+
+    </div>
+  
+            <div class="view-footer">
+      <a href="/members/life-relief-and-development/all-updates">See All Member Updates</a>
+    </div>
+    </div>
+</div>
+
+      </div>
+    </div>
+    <div class='member-update-view__title'>
+      <h2><a href="/members/life-relief-and-development/sports-field-rehabilitation-erbil" hreflang="en">Sports Field Rehabilitation in Erbil</a></h2>
+    </div>
+    <div class='member-update-view__tags'>
+      
+      <a href="/filter?f%5B0%5D=sectors%3A13">Education</a>
+      <span class='member-update-view__date'><time datetime="2022-02-25T12:00:00Z" class="datetime">February 25, 2022</time>
+</span>
+    </div>
+    <div class='member-update-view__summary'>
+      <p><span><span>LIFE for Relief and Development <span>revitalized</span> sports fields in Akito and Shalama schools in the Ainkawa District in Erbil. The rehabilitation project started with a clean-up of dirt and debris from the fields. Next, basketball and volleyball bases were installed, along with the nets. Fences and gates to the sports courts were also painted to complete the transformation. The schools were provided with sports equipment and sportswear, so students have everything they need to enjoy the new facilities. About 1,000 students will benefit from this rehabilitation project. <a href="https://www.lifeusa.org/post/sports-field-rehabilitation-in-iraq">More information</a>.</span></span></p>
+
+<p> </p>
+    </div>
+    <div class='member-update-view__image'>
+      <article class="media media--type-image media--view-mode-default">
+  
+      
+  <div class="field field--name-field-media-image field--type-image field--label-visually_hidden">
+    <div class="field__label visually-hidden">Image</div>
+              <div class="field__item">  <img src="/sites/default/files/styles/large/public/2022-05/LIFE_Sports%20field%20rehab.jpg?itok=F2dCbszt" width="480" height="402" alt="Sports field rehabilitation in Erbil_Life for Relief and Development" loading="lazy" typeof="foaf:Image" class="image-style-large" />
+
+
+</div>
+          </div>
+
+            <div class="field field--name-field-caption field--type-string field--label-hidden field__item">Photo by Life for Relief and Development</div>
+      
+  </article>
+
+    </div>
+  </div>
+
+</div>
+
+</div>
+
+    </div>
+  
+          </div>
+</div>
+
+      </div>
+      <div class='member-profile-page__sharethis-container'>
+                    <div class='share-button'>
+        <div class='share-button__container'>
+            <span class="material-icons material-icons-outlined">
+                share
+            </span>
+            Share
+        </div>
+        <div class='share-button__social'>
+            <div class="sharethis-wrapper">
+      <span st_url="https://www.ngoaidmap.org/members/life-relief-and-development/sports-field-rehabilitation-erbil" st_title="Sports Field Rehabilitation in Erbil" class="st_facebook_button" displayText="facebook"></span>
+
+      <span st_url="https://www.ngoaidmap.org/members/life-relief-and-development/sports-field-rehabilitation-erbil" st_title="Sports Field Rehabilitation in Erbil" class="st_twitter_button" displayText="twitter"></span>
+
+      <span st_url="https://www.ngoaidmap.org/members/life-relief-and-development/sports-field-rehabilitation-erbil" st_title="Sports Field Rehabilitation in Erbil" class="st_email_button" displayText="email"></span>
+
+  </div>
+
+        </div>
+    </div>
+    
+    
+
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+  </div>
+
+  </div>
+
+
+  </main>  
+  </div>
+
+  </div>
+
+
+    
+    
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/627","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"ajaxPageState":{"libraries":"classy\/base,classy\/messages,core\/normalize,eu_cookie_compliance\/eu_cookie_compliance_default,google_analytics\/google_analytics,ngo_aid_map\/fonts,ngo_aid_map\/global,ngo_aid_map\/header,ngo_aid_map\/history-back,ngo_aid_map\/members-profile,ngo_aid_map\/menu--main,ngo_aid_map\/normalize.css,ngo_aid_map\/share-button,ngo_aid_map\/what-input,sharethis\/sharethis,sharethis\/sharethispickerexternalbuttons,sharethis\/sharethispickerexternalbuttonsws,system\/base,views\/views.module","theme":"ngo_aid_map","theme_token":null},"ajaxTrustedUrl":{"\/search":true},"google_analytics":{"account":"UA-20618949-1","trackOutbound":true,"trackMailto":true,"trackDownload":true,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip","trackUrlFragments":true},"eu_cookie_compliance":{"cookie_policy_version":"1.0.0","popup_enabled":true,"popup_agreed_enabled":false,"popup_hide_agreed":false,"popup_clicking_confirmation":false,"popup_scrolling_confirmation":false,"popup_html_info":"\u003Cdiv role=\u0022alertdialog\u0022 aria-labelledby=\u0022popup-text\u0022  class=\u0022eu-cookie-compliance-banner eu-cookie-compliance-banner-info eu-cookie-compliance-banner--opt-in\u0022\u003E\n  \u003Cdiv class=\u0022popup-content info eu-cookie-compliance-content\u0022\u003E\n    \u003Cdiv id=\u0022popup-text\u0022 class=\u0022eu-cookie-compliance-message\u0022\u003E\n      \u003Ch2\u003EWe use cookies on this site to enhance your user experience.\u003C\/h2\u003E\u003Cp\u003EBy clicking the Accept button, you agree to us doing so.\u003C\/p\u003E\n              \u003Cbutton type=\u0022button\u0022 class=\u0022find-more-button eu-cookie-compliance-more-button\u0022\u003EMore info\u003C\/button\u003E\n          \u003C\/div\u003E\n\n    \n    \u003Cdiv id=\u0022popup-buttons\u0022 class=\u0022eu-cookie-compliance-buttons\u0022\u003E\n              \u003Cbutton type=\u0022button\u0022 class=\u0022decline-button eu-cookie-compliance-secondary-button\u0022\u003ENo, thanks\u003C\/button\u003E\n            \u003Cbutton type=\u0022button\u0022 class=\u0022agree-button eu-cookie-compliance-default-button\u0022\u003EAccept\u003C\/button\u003E\n\n    \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E","use_mobile_message":false,"mobile_popup_html_info":"\u003Cdiv role=\u0022alertdialog\u0022 aria-labelledby=\u0022popup-text\u0022  class=\u0022eu-cookie-compliance-banner eu-cookie-compliance-banner-info eu-cookie-compliance-banner--opt-in\u0022\u003E\n  \u003Cdiv class=\u0022popup-content info eu-cookie-compliance-content\u0022\u003E\n    \u003Cdiv id=\u0022popup-text\u0022 class=\u0022eu-cookie-compliance-message\u0022\u003E\n      \n              \u003Cbutton type=\u0022button\u0022 class=\u0022find-more-button eu-cookie-compliance-more-button\u0022\u003EMore info\u003C\/button\u003E\n          \u003C\/div\u003E\n\n    \n    \u003Cdiv id=\u0022popup-buttons\u0022 class=\u0022eu-cookie-compliance-buttons\u0022\u003E\n              \u003Cbutton type=\u0022button\u0022 class=\u0022decline-button eu-cookie-compliance-secondary-button\u0022\u003ENo, thanks\u003C\/button\u003E\n            \u003Cbutton type=\u0022button\u0022 class=\u0022agree-button eu-cookie-compliance-default-button\u0022\u003EAccept\u003C\/button\u003E\n\n    \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E","mobile_breakpoint":768,"popup_html_agreed":false,"popup_use_bare_css":false,"popup_height":"auto","popup_width":"100%","popup_delay":1000,"popup_link":"\/privacy-policy","popup_link_new_window":true,"popup_position":false,"fixed_top_position":true,"popup_language":"en","store_consent":false,"better_support_for_screen_readers":false,"cookie_name":"","reload_page":false,"domain":"","domain_all_sites":false,"popup_eu_only_js":false,"cookie_lifetime":100,"cookie_session":0,"set_cookie_session_zero_on_disagree":0,"disagree_do_not_show_popup":false,"method":"opt_in","automatic_cookies_removal":true,"allowed_cookies":"","withdraw_markup":"\u003Cbutton type=\u0022button\u0022 class=\u0022eu-cookie-withdraw-tab\u0022\u003EPrivacy settings\u003C\/button\u003E\n\u003Cdiv role=\u0022alertdialog\u0022 aria-labelledby=\u0022popup-text\u0022 class=\u0022eu-cookie-withdraw-banner\u0022\u003E\n  \u003Cdiv class=\u0022popup-content info eu-cookie-compliance-content\u0022\u003E\n    \u003Cdiv id=\u0022popup-text\u0022 class=\u0022eu-cookie-compliance-message\u0022\u003E\n      \u003Ch2\u003EWe use cookies on this site to enhance your user experience\u003C\/h2\u003E\u003Cp\u003EYou have given your consent for us to set cookies.\u003C\/p\u003E\n    \u003C\/div\u003E\n    \u003Cdiv id=\u0022popup-buttons\u0022 class=\u0022eu-cookie-compliance-buttons\u0022\u003E\n      \u003Cbutton type=\u0022button\u0022 class=\u0022eu-cookie-withdraw-button\u0022\u003EWithdraw consent\u003C\/button\u003E\n    \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E","withdraw_enabled":false,"reload_options":0,"reload_routes_list":"","withdraw_button_on_info_popup":false,"cookie_categories":[],"cookie_categories_details":[],"enable_save_preferences_button":true,"cookie_value_disagreed":"0","cookie_value_agreed_show_thank_you":"1","cookie_value_agreed":"2","containing_element":"body","settings_tab_enabled":false,"open_by_default":true},"sharethis":{"publisher":"dr-997f567f-405d-4cc2-5214-85e9db259109","version":"5x","doNotCopy":true,"hashAddressBar":false,"doNotHash":true},"user":{"uid":0,"permissionsHash":"9879380f07933e41a36a83f392e637e5cb52fa3391da6be4ceaf449a3ce57102"}}</script>
+<script src="/sites/default/files/js/js_ibLrtUxyULJhV2pgES23hanCTqEeHrN05FoADWVSBMg.js"></script>
+<script src="/modules/contrib/eu_cookie_compliance/js/eu_cookie_compliance.js?v=1.19" defer></script>
+<script src="/sites/default/files/js/js_rjQ7DFzZa9TW-LL_c7n5LLA50UncjcDKnmlglqfCGSs.js"></script>
+<script src="https://ws.sharethis.com/button/buttons.js"></script>
+<script src="/sites/default/files/js/js_XD0xCNQfsCP2KFqXpsdaSXneapRftATzaaMAnuUm9nk.js"></script>
+
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"NRJS-d577109c48333a5e624","applicationID":"1009614215","transactionName":"ZF1WZkZUWEpYAUdbWV0XdVFAXFlXFhJSVVNsW1VRXFA=","queueTime":0,"applicationTime":12,"atts":"SBpVEA5OS0Q=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>

@@ -1,0 +1,6 @@
+notes: "InterAction is an alliance of international NGOs, all working to make the world a more peaceful, just, and prosperous place. NGO Aid Map highlights the work of InterAction Member NGOs around the globe."
+license_id: "cc-by-igo"
+methodology: "Registry"
+dataset_source: "InterAction"
+package_creator: "mcarans"
+private: False  # has to be True or False
