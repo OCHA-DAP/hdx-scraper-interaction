@@ -123,7 +123,7 @@ class TestInterAction:
                     "data_update_frequency": "30",
                     "subnational": "0",
                     "groups": [{"name": "afg"}],
-                    "dataset_date": "[2021-02-10T00:00:00 TO 2021-02-10T00:00:00]",
+                    "dataset_date": "[2021-02-10T00:00:00 TO 2021-02-10T23:59:59]",
                     "tags": [
                         {
                             "name": "hxl",
