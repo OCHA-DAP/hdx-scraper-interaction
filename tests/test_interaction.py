@@ -8,13 +8,13 @@ from os.path import join
 import pytest
 from hdx.api.configuration import Configuration
 from hdx.api.locations import Locations
+from hdx.data.vocabulary import Vocabulary
 from hdx.location.country import Country
 from hdx.utilities.compare import assert_files_same
 from hdx.utilities.downloader import Download
 from hdx.utilities.path import temp_dir
 from hdx.utilities.retriever import Retrieve
 from hdx.utilities.useragent import UserAgent
-
 from interaction import InterAction
 
 
@@ -28,6 +28,14 @@ class TestInterAction:
         )
         UserAgent.set_global("test")
         Country.countriesdata(use_live=False)
+        tags = ["economics", "environment", "hxl"]
+        Vocabulary._tags_dict = {tag: {"Action to Take": "ok"} for tag in tags}
+        tags = [{"name": tag} for tag in tags]
+        Vocabulary._approved_vocabulary = {
+            "tags": tags,
+            "id": "b891512e-9516-4bf5-962a-7a289772a2a1",
+            "name": "approved",
+        }
         return Configuration.read()
 
     @pytest.fixture(scope="function")
@@ -146,6 +154,4 @@ class TestInterAction:
                     "url_type": "upload",
                 }
                 filename = "member_data_AFG.csv"
-                assert_files_same(
-                    join(fixtures, filename), resource.file_to_upload
-                )
+                assert_files_same(join(fixtures, filename), resource.file_to_upload)
