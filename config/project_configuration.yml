@@ -24,6 +24,7 @@ tag_mapping:
   "covid-19 response": "covid-19"
   "global health": "health"
   "hygiene (wash)": "water sanitation and hygiene-wash"
+  "sanitation": "water sanitation and hygiene-wash"
   "local governance": "governance and civil society"
   "peace": "peacekeeping"
   "higher education": "education"
