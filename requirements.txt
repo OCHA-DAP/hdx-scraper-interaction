@@ -1,5 +1,5 @@
-hdx-python-api==6.0.2
-python-slugify==8.0.1
-beautifulsoup4==4.12.2
+hdx-python-api==6.2.1
+python-slugify==8.0.4
+beautifulsoup4==4.12.3
 html2text==2020.1.16
-lxml==4.9.2
+lxml==5.1.0
