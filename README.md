@@ -1,3 +1,5 @@
+## DEPRECATED - NGO Aid Map site has been discontinued
+
 ### Collector for InterAction's Datasets
 [![Build Status](https://github.com/OCHA-DAP/hdx-scraper-interaction/workflows/build/badge.svg)](https://github.com/OCHA-DAP/hdx-scraper-interaction/actions?query=workflow%3Abuild) [![Coverage Status](https://coveralls.io/repos/github/OCHA-DAP/hdx-scraper-interaction/badge.svg?branch=main&ts=1)](https://coveralls.io/github/OCHA-DAP/hdx-scraper-interaction?branch=main)
 
